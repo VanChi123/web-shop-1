@@ -1,0 +1,89 @@
+<!--<div class="row">-->
+<!--  <ng-container *ngFor="let item of listItem; let i = index;">-->
+<!--    <div [ngClass]="{'col-sm-3': !listMiddle.includes(i),-->
+<!--                     'col-sm-6': listMiddle.includes(i)}"-->
+<!--         class="item">-->
+<!--      <img [src]="item.img" alt="" style="width: 100%; border-radius: 8px" [style.height]="!listMiddle.includes(i) ? '200px' : 'auto'">-->
+<!--      <h4>{{item.title}}</h4>-->
+<!--      <div>-->
+<!--        <div class="col-md-6">{{item.day}}</div>-->
+<!--        <div class="col-md-6">{{item.viewer}}</div>-->
+<!--      </div>-->
+<!--    </div>-->
+
+<!--  </ng-container>-->
+
+<!--</div>-->
+
+
+<div class="row" style="padding-top: 5px">
+
+  <div class="col-sm-3" style="padding: 0; border-right: 1px solid gainsboro;" >
+    <a href="" style="text-decoration: none;color: #262626;">
+      <ng-container *ngFor="let it of listItem; let idx = index;">
+
+        <ng-container *ngIf="listStart.includes(idx)">
+            <ng-container
+              *ngTemplateOutlet="estimateTemplate; context: {$implicit: it, col3: true}">
+            </ng-container>
+        </ng-container>
+
+      </ng-container>
+    </a>
+
+  </div>
+
+  <div class="col-sm-6" style="padding: 0; border-right: 1px solid gainsboro;">
+    <a href="" style="text-decoration: none;color: #262626;">
+      <ng-container *ngFor="let it of listItem; let idx = index;">
+
+        <ng-container *ngIf="listMiddle.includes(idx)">
+          <ng-container
+            *ngTemplateOutlet="estimateTemplate; context: {$implicit: it, col3: false}">
+          </ng-container>
+        </ng-container>
+
+      </ng-container>
+    </a>
+
+  </div>
+
+
+  <div class="col-sm-3" style="padding: 0">
+    <a href="" style="text-decoration: none;color: #262626;">
+      <ng-container *ngFor="let it of listItem; let idx = index;">
+
+        <ng-container *ngIf="listEnd.includes(idx)">
+          <ng-container
+            *ngTemplateOutlet="estimateTemplate; context: {$implicit: it, col3: true}">
+          </ng-container>
+        </ng-container>
+
+      </ng-container>
+    </a>
+
+  </div>
+
+
+</div>
+
+
+<ng-template #estimateTemplate let-item let-idx="col3">
+  <div class="a">
+    <img [src]="item.img" alt="" style="width: 100%; border-radius: 0"
+         [style.height]="idx ? '200px' : 'auto'">
+<!--    <h4 style="height: 70px; overflow: hidden; padding: 0 5px">{{item.title | hideStringMaxLenght}}</h4>-->
+    <h4 style="height: 70px; overflow: hidden; padding: 0 5px">{{item.title | hideStringMaxLenght : idx ? 45 : 100}}</h4>
+
+    <div style="padding: 0 5px">
+      <div class="row">
+        <div class="col-md-6">{{item.day}}</div>
+        <div class="col-md-6" style="text-align: end">
+          <i class="fa-regular fa-eye"></i>
+          {{item.viewer}}
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>
+
