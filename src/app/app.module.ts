@@ -9,13 +9,15 @@ import { NewsComponent } from './introduce/news/news.component';
 import {ShareModule} from "./share/share.module";
 import {FormsModule} from "@angular/forms";
 import { ListProdComponent } from './introduce/list-prod/list-prod.component';
+import { PopUpComponent } from './introduce/pop-up/pop-up.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     IntroducePagesComponent,
     NewsComponent,
-    ListProdComponent
+    ListProdComponent,
+    PopUpComponent
   ],
     imports: [
         BrowserModule,
