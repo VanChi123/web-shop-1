@@ -16,6 +16,24 @@
 <!--</div>-->
 
 
+<div class="row header-bar">
+  <div class="col-md-12">
+    <form method="get" class="input-group"><input type="text" id="input-field" value=""
+                                                  placeholder="Nhập thông tin tìm kiếm" name="keyword"
+                                                  class="form-control search-form-control">
+      <div class="input-group-btn">
+        <div data-toggle="buttons" class="btn-group btn-group-toggle btn-group-custom-flex">
+          <div>
+            <button type="button" class="btn btn-accent search-button" style="background: bisque;">Tìm kiếm</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+
 <div class="row" style="padding-top: 5px">
 
   <div class="col-sm-3" style="padding: 0; border-right: 1px solid gainsboro;" >
@@ -73,12 +91,13 @@
     <img [src]="item.img" alt="" style="width: 100%; border-radius: 0"
          [style.height]="idx ? '200px' : 'auto'">
 <!--    <h4 style="height: 70px; overflow: hidden; padding: 0 5px">{{item.title | hideStringMaxLenght}}</h4>-->
-    <h4 style="height: 70px; overflow: hidden; padding: 0 5px">{{item.title | hideStringMaxLenght : idx ? 45 : 100}}</h4>
+<!--    <h4 class="text-hide">{{item.title | hideStringMaxLenght : idx ? 45 : 100}}</h4>-->
+    <h4 class="text-hide">{{item.title}}</h4>
 
     <div style="padding: 0 5px">
       <div class="row">
         <div class="col-md-6">{{item.day}}</div>
-        <div class="col-md-6" style="text-align: end">
+        <div class="col-md-6 text-left-if" style="text-align: end">
           <i class="fa-regular fa-eye"></i>
           {{item.viewer}}
         </div>
@@ -86,4 +105,83 @@
     </div>
   </div>
 </ng-template>
+
+
+<div class="row">
+  <div class="col-md-8">
+
+    <ul class="nav nav-pills" style="justify-content: space-between;">
+      <li>
+        <h3 class="title-common">Tin đấu thầu</h3>
+      </li>
+      <li>
+        <p>Xem tất cả></p>
+      </li>
+    </ul>
+
+    <div class="cot8">
+      <div class="row cot8-item" *ngFor="let x of listTinTuc">
+        <div class="col-md-4">
+          <img [src]="x.img" style="width: 100%" alt="">
+        </div>
+        <div class="col-md-8">
+          <h5>{{x.title}}</h5>
+          <div style="padding: 0 5px">
+            <div class="row">
+              <div class="col-md-6">{{x.dat}}</div>
+              <div class="col-md-6 text-left-if" style="text-align: end">
+                <i class="fa-regular fa-eye"></i>
+                {{x.view}}
+              </div>
+            </div>
+          </div>
+          <p class="text-rut-gon">{{x.content_begin}}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="paginator-box">
+      <div class="right">
+        Trang
+        <div class="w-px-60 d-inline-block">
+          <select [(ngModel)]="currentPage" (ngModelChange)="onSearch($event)">
+            <option *ngFor="let item of getPageList()"
+                    [label]="transListPagination?.totalPages ? (item + 1) : 0"
+                    [value]="item"></option>
+          </select>
+        </div>
+        trên {{ transListPagination?.totalPages }}
+      </div>
+
+    </div>
+  </div>
+
+  <div class="col-md-4" style="border-left: 1px solid gainsboro">
+    <div class="">
+      <h3 class="title-common">Tin tức nổi bật</h3>
+    </div>
+
+    <div class="cot8">
+      <div class="row cot8-item" *ngFor="let x of listTinTuc">
+        <div class="col-md-4">
+          <img [src]="x.img" style="width: 100%" alt="">
+        </div>
+        <div class="col-md-8">
+          <p style="font-weight: bold">{{x.title}}</p>
+          <div style="padding: 0 5px">
+            <div class="row">
+              <div class="col-md-6">{{x.dat}}</div>
+              <div class="col-md-6 text-left-if" style="text-align: end">
+                <i class="fa-regular fa-eye"></i>
+                {{x.view}}
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
 
