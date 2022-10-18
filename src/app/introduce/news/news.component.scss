@@ -1,3 +1,15 @@
+.header-bar{
+  width: 77.5%;
+  margin-left: auto;
+  margin-right: auto;
+  background: rgba(38,38,38,0.8);
+  margin-bottom: 27px;
+  box-shadow: 0 4px 15px rgb(0 0 0 / 6%);
+  border-radius: 16px;
+  padding: 12px;
+}
+
+//////
 
 .a{
   margin-bottom: 16px;
@@ -9,4 +21,81 @@
   margin-left: 10px;
   margin-right: 10px;
 
+}
+
+
+// tiêu dề tin:
+.text-hide{
+  // 4 thuộc tính phía dưới là để tự động thêm dấu ... khi text vượt quá số dòng clamp
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+
+  //height: 55px;    // nội dung ngắn hay dài sẽ không ảnh hưởng độ cao title cần ăn khớp vói 4 thuộc tính trên
+  padding: 0 5px;  // padding
+}
+
+
+
+
+// chỉ apply css này khi màn hình ntn
+//@media only screen and (min-width: 575px) and (max-width: 767px) {
+//  .text-left-if {
+//    text-align: left !important;
+//  }
+//}
+
+
+@media only screen and (max-width: 767px) {  // nếu màn hình width < 767px thì css này sẽ align text ở bên trái
+  .text-left-if {
+    text-align: left !important;
+  }
+}
+
+
+
+//// cột 8
+.title-common{
+  padding-left: 7px;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 32px;
+  align-items: center;
+  text-align: left;
+  color: #007aa4 !important;
+  border-left: 5px solid red;
+  text-transform: uppercase;
+}
+
+.cot8 {
+  background: aliceblue;
+  padding: 12px;
+  border-radius: 6px;
+}
+
+.cot8-item{
+  padding: 5px;
+  border-bottom: 1px solid gainsboro;
+}
+
+
+
+
+// common
+.text-rut-gon{
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.paginator-box {
+  min-height: 70px;
+  line-height: 70px;
+  padding: 0 24px;
+}
+
+.paginator-box .right{
+  float: right;
 }

@@ -14,13 +14,45 @@ export class NewsComponent implements OnInit {
     {title: 'Cao tốc Mỹ Thuận - Cần Thơ: Thầu chính, thầu phụ tăng tốc bù tiến độ', img: 'https://muasamcong.mpi.gov.vn/content-provider/res/news/04-4956.jpg', day: '13/10/2022', viewer: 1632},
   ]
 
+
+  listTinTuc = [
+    {img: 'https://muasamcong.mpi.gov.vn/content-provider/res/news/02-2184.jpg', title: 'Lồng ghép tiêu chí xanh trong mua sắm công', dat: '17/03/2020', view: 34434, content_begin: 'TGVN. Ngày 4/11, Quốc hội tiếp tục họp phiên toàn thể tại Hội trường, trong đó các đại biểu tiếp tục thảo luận về những vấn đề liên quan'},
+    {img: 'https://muasamcong.mpi.gov.vn/content-provider/res/news/02-2184.jpg', title: 'Lồng ghép tiêu chí xanh trong mua sắm công', dat: '17/03/2020', view: 34434, content_begin: 'TGVN. Ngày 4/11, Quốc hội tiếp tục họp phiên toàn thể tại Hội trường, trong đó các đại biểu tiếp tục thảo luận về những vấn đề liên quan'},
+    {img: 'https://muasamcong.mpi.gov.vn/content-provider/res/news/02-2184.jpg', title: 'Lồng ghép tiêu chí xanh trong mua sắm công', dat: '17/03/2020', view: 34434, content_begin: 'TGVN. Ngày 4/11, Quốc hội tiếp tục họp phiên toàn thể tại Hội trường, trong đó các đại biểu tiếp tục thảo luận về những vấn đề liên quan'},
+    {img: 'https://muasamcong.mpi.gov.vn/content-provider/res/news/02-2184.jpg', title: 'Lồng ghép tiêu chí xanh trong mua sắm công', dat: '17/03/2020', view: 34434, content_begin: 'TGVN. Ngày 4/11, Quốc hội tiếp tục họp phiên toàn thể tại Hội trường, trong đó các đại biểu tiếp tục thảo luận về những vấn đề liên quan'},
+    {img: 'https://muasamcong.mpi.gov.vn/content-provider/res/news/02-2184.jpg', title: 'Lồng ghép tiêu chí xanh trong mua sắm công', dat: '17/03/2020', view: 34434, content_begin: 'TGVN. Ngày 4/11, Quốc hội tiếp tục họp phiên toàn thể tại Hội trường, trong đó các đại biểu tiếp tục thảo luận về những vấn đề liên quan'}
+  ]
+
   listStart = [0, 1, 5, 6]
   listMiddle = [2, 7]
   listEnd = [3, 4, 8, 9]
 
+  currentPage = 0;
+  transListPagination = {
+    totalPages: 10,
+    totalElements: 100
+  };
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+
+
+  onSearch(event: any) {
+
+  }
+
+  getPageList() {
+    if (!this.transListPagination || this.transListPagination?.totalPages === 0) {
+      return [0];
+    }
+    const pages = [];
+    for (let i = 0; i < this.transListPagination.totalPages; i++) {
+      pages.push(i);
+    }
+    return pages;
   }
 
 }

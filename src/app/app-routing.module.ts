@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {IntroducePagesComponent} from "./introduce/introduce-pages/introduce-pages.component";
 import {NewsComponent} from "./introduce/news/news.component";
+import {ListProdComponent} from "./introduce/list-prod/list-prod.component";
 
 const routes: Routes = [
   {
@@ -15,6 +16,12 @@ const routes: Routes = [
     // canActivate: [LoadUserActionGuard],
     data: {breadcrumb: 'News'},
     component: NewsComponent
+  },
+  {
+    path: 'list-prod',
+    // canActivate: [LoadUserActionGuard],
+    data: {breadcrumb: 'List Products'},
+    component: ListProdComponent
   },
 ];
 
