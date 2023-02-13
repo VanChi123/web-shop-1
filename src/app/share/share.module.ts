@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { HideStringMaxLenghtPipe } from './pipes/hide-string-max-lenght.pipe';
 
 
@@ -12,7 +11,6 @@ import { HideStringMaxLenghtPipe } from './pipes/hide-string-max-lenght.pipe';
     HideStringMaxLenghtPipe
   ],
   imports: [
-    CommonModule
   ]
 })
 export class ShareModule { }

@@ -11,6 +11,8 @@ import {FormsModule} from "@angular/forms";
 import { ListProdComponent } from './introduce/list-prod/list-prod.component';
 import { PopUpComponent } from './introduce/pop-up/pop-up.component';
 
+import {CoreModule} from "./core/core.module";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,8 +30,11 @@ import { PopUpComponent } from './introduce/pop-up/pop-up.component';
 
         FormsModule,
         ShareModule,
+
+      CoreModule  // Bao gồm TranslateModule
     ],
-  providers: [],
+  providers: []
+  ,
   bootstrap: [AppComponent]
 })
 export class AppModule { }
