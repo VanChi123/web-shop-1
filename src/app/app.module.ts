@@ -10,6 +10,7 @@ import {ShareModule} from "./share/share.module";
 import {FormsModule} from "@angular/forms";
 import { ListProdComponent } from './introduce/list-prod/list-prod.component';
 import { PopUpComponent } from './introduce/pop-up/pop-up.component';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -28,6 +29,8 @@ import { PopUpComponent } from './introduce/pop-up/pop-up.component';
 
         FormsModule,
         ShareModule,
+
+        HttpClientModule,
     ],
   providers: [],
   bootstrap: [AppComponent]

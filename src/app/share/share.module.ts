@@ -9,7 +9,9 @@ import { HideStringMaxLenghtPipe } from './pipes/hide-string-max-lenght.pipe';
     HideStringMaxLenghtPipe
   ],
   exports: [
-    HideStringMaxLenghtPipe
+    HideStringMaxLenghtPipe,
+
+    CommonModule
   ],
   imports: [
     CommonModule

@@ -70,6 +70,10 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "web_shop_v1:build",
+            "proxyConfig": "src/proxy.conf.js"
+          },
           "configurations": {
             "production": {
               "browserTarget": "web_shop_v1:build:production"
