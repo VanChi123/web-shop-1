@@ -12,6 +12,8 @@ import { ListProdComponent } from './introduce/list-prod/list-prod.component';
 import { PopUpComponent } from './introduce/pop-up/pop-up.component';
 import {HttpClientModule} from "@angular/common/http";
 
+import {CoreModule} from "./core/core.module";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,8 +33,11 @@ import {HttpClientModule} from "@angular/common/http";
         ShareModule,
 
         HttpClientModule,
+
+      CoreModule  // Bao gồm TranslateModule
     ],
-  providers: [],
+  providers: []
+  ,
   bootstrap: [AppComponent]
 })
 export class AppModule { }
