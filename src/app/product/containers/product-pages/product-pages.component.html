@@ -1,0 +1,15 @@
+<!--<egp-sub-header>-->
+<!--  <span id="page-title-text"> {{'PM2.LIST_ADVANCE_CDT.GENERAL.HEADER' | translate }}</span>-->
+
+<!--  <button id="page-toolbar" class="btn btn-primary text-right" routerLink="../request-advance-cdt">{{'PM2.LIST_ADVANCE_CDT.BUTTON.btnCreate' | translate }}</button>-->
+<!--</egp-sub-header>-->
+
+<div>
+  <button id="page-toolbar" class="btn btn-primary text-right" routerLink="./create">Tạo mới</button>
+</div>
+
+<app-product-list
+  [productList]="(productList$ | async)"
+>
+
+</app-product-list>

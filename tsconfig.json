@@ -21,7 +21,8 @@
     "lib": [
       "es2020",
       "dom"
-    ]
+    ],
+    "strictPropertyInitialization": false,    // cái này để Nếu khai báo mà ko khởi tạo thì ko bắt lỗi
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

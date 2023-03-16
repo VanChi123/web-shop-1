@@ -1,0 +1,29 @@
+<!--<table class="table table-hover">-->
+<table class="table">
+
+  <thead class="table-dark">
+  <tr>
+    <td>STT</td>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Email</th>
+    <th>Sales Volume</th>
+    <th>Met Quota?</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr *ngFor="let tempSalesPerson of salesPersonList; let i = index" [ngClass]="{'high-light': tempSalesPerson.salesVolume > 60000,'high-red': tempSalesPerson.salesVolume <= 40000}">
+    <td>{{i + 1}}</td>
+    <td>{{ tempSalesPerson.firstName }}</td>
+    <td>{{ tempSalesPerson.lastName }}</td>
+    <td>{{ tempSalesPerson.email }}</td>
+    <td>{{ tempSalesPerson.salesVolume | currency : 'USD' }}</td>
+    <td>
+      <span *ngIf="tempSalesPerson.salesVolume >= 60000; else block">Yes</span>
+      <ng-template #block><span>No</span></ng-template>
+    </td>
+  </tr>
+  </tbody>
+
+</table>

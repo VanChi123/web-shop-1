@@ -30,6 +30,19 @@ const routes: Routes = [
     data: {breadcrumb: 'Popup'},
     component: PopUpComponent
   },
+
+
+  {
+    path: 'base',
+    data: {breadcrumb: 'Base Component'},
+    loadChildren: () => import('./base/base.module').then(m => m.BaseModule)
+  },
+  // product
+  {
+    path: 'product',
+    data: {breadcrumb: 'Product Component'},
+    loadChildren: () => import('./product/product.module').then(m => m.ProductModule)
+  },
 ];
 
 @NgModule({
